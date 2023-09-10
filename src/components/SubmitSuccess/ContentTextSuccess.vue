@@ -7,15 +7,12 @@
             
         </div>
         <div class="mt-32 md:mt-0">
-            <SubmitButton >
-                Dismiss message
-            </SubmitButton>
-
+            <DismissMessageButton />
         </div>
 </template>
 
 <script setup lang="ts">
-import SubmitButton from '../SubmitButton.vue';
+import DismissMessageButton from './DismissMessageButton.vue';
 
 </script>
 
