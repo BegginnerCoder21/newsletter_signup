@@ -19,6 +19,7 @@ const emit = defineEmits<{
 const SubmitForm = () => {
     let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     let validEmail = res.test(inputEmail.value);
+    
     if(!inputEmail.value || !validEmail){
         errorValue.value = true;
         setTimeout(() => {
