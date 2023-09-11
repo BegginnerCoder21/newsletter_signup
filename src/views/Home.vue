@@ -9,7 +9,7 @@
         <ContentImage />
     </div>
     <div v-else class="flex flex-col md:h-[19rem] h-full w-full md:w-[20rem] bg-white rounded-xl p-5">
-        <ContentTextSuccess /> 
+        <ContentTextSuccess :email="emails" /> 
     </div>
 </template>
 
@@ -18,12 +18,14 @@ import  ContentImage from '@/components/ContentImage.vue';
 import ProductList from '../components/ProductList.vue';
 import Email from '../components/Email.vue';
 import  ContentTextSuccess from '@/components/SubmitSuccess/ContentTextSuccess.vue';
-import { provide, ref } from 'vue';
+import { ref } from 'vue';
+const emails = ref<string>('');
 
 const validValues = ref<boolean>(true);
 
-const ValidValue = () => {
+const ValidValue = (email:string) => {
     validValues.value = false;
+    emails.value = email;
 }
 
 </script>

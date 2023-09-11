@@ -13,20 +13,20 @@ import SubmitButton from './SubmitButton.vue';
 const inputEmail = ref<string>('');
 const errorValue = ref<boolean>(false);
 const emit = defineEmits<{
-    (e:'submit-button'):void
+    (e:'submit-button',value:string):void
 }>();
 
 const SubmitForm = () => {
     let res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     let validEmail = res.test(inputEmail.value);
-    
+
     if(!inputEmail.value || !validEmail){
         errorValue.value = true;
         setTimeout(() => {
             errorValue.value = false;
         } , 2000)
     }else{
-        emit('submit-button');
+        emit('submit-button',inputEmail.value);
     }
 }
 
